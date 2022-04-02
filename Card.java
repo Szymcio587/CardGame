@@ -1,4 +1,5 @@
-public class Card {
+public class Card
+{
     enum Color {
         SPADES, CLUBS, DIAMONDS, HEARTS;
         private static final Color[] colors = Color.values();
