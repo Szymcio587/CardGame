@@ -38,13 +38,15 @@ public class Deck
 
     public void shuffle()
     {
-        int n = cards.length;
         Random random = new Random();
+        int drawed;
+        Card bufor;
         for(int i=0; i<cards.length; i++)
         {
-            int randomvalue = i + random.nextInt(n-1);
-            Card randomCard = cards[randomvalue] = cards[i];
-            cards[i] = randomCard;
+            drawed = random.nextInt(cards.length-i);
+            bufor = cards[drawed];
+            cards[drawed] = cards[cards.length-i-1];
+            cards[cards.length-i-1] = bufor;
         }
     }
 
