@@ -11,7 +11,9 @@ public class ServerClass{
     private DataInputStream input;
     private DataOutputStream output;
 
-    public ServerClass(String ip, int host) {
+    private static ServerClass server = null;
+
+    public void CreateServer(String ip, int host) {
         this.ip = ip;
         this.host = host;
         playersNumber = 0;
@@ -37,15 +39,27 @@ public class ServerClass{
             }
 
             System.out.println("Zaraz gra się rozpocznie...");
-            Engine game = new Engine();
         }
         catch (Exception e) {
+            System.out.println(e);
             Error er = new Error("Nie udało się nawiązać połączenia z graczami");
         }
     }
 
-    public static void main(String[] args) {
-        ServerClass server = new ServerClass("localhost", 6666);
+    public int getPlayersNumber() {
+        return playersNumber;
     }
 
+    public static ServerClass getServer() {
+        if(server == null) {
+            server = new ServerClass();
+            System.out.println("Nowy serwer");
+        }
+        return server;
+    }
+
+    public static void main(String[] args) {
+        server = new ServerClass();
+        server.CreateServer("localhost", 6666);
+    }
 }
