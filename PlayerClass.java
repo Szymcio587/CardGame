@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PlayerClass extends PlayerCommunicator {
+    private int points, bid, bombs; //nie wiem jak inaczej przetłumaczyć bombki z tysiąca xD
 
     public int score;
     public int score_in_single_round;
@@ -18,6 +19,7 @@ public class PlayerClass extends PlayerCommunicator {
 
     public PlayerClass(String ip, int host, int score, int score_in_single_round, boolean is_bidding, int how_much_is_bidding) {
         super(ip, host);
+<<<<<<< HEAD
         this.score = score;
         this.score_in_single_round = score_in_single_round;
         this.is_bidding = is_bidding;
@@ -64,4 +66,14 @@ public class PlayerClass extends PlayerCommunicator {
 
 
 
+=======
+        points = 0;
+        bid = 0;
+        bombs = 2;
+    }
+
+    public int getBombs() {
+        return bombs;
+    }
+>>>>>>> fb8f8fb6764723a40e346b72947ac9660f2bfe80
 }

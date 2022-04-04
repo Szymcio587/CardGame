@@ -9,6 +9,7 @@ public class PlayerCommunicator {
     private DataInputStream input;
     private DataOutputStream output;
     private boolean connection;
+    String name;
 
     public void Connect() {
         try {
@@ -16,6 +17,7 @@ public class PlayerCommunicator {
             input = new DataInputStream(soc.getInputStream());
             output = new DataOutputStream(soc.getOutputStream());
             playerID = input.readInt();
+            connection = true;
 
             if(playerID != 3) {
                 System.out.println("Zaczekaj na pozostałych graczy...");
@@ -34,8 +36,23 @@ public class PlayerCommunicator {
         this.ip = ip;
         this.host = host;
         connection = false;
+        playerID = 0;
 
         LogIn login = new LogIn(this);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean getID() {
+        if(this.playerID == 0)
+            return false;
+        return true;
     }
 
 }

@@ -1,16 +1,22 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.ActionListener;
 
-public class Error {
-    private static final int WINDOW_WIDTH = 500, WINDOW_HEIGHT = 500;
+public class Error extends Window implements ActionListener{
 
-    Error(String message) {
-        JFrame f= new JFrame("Error message");
-        JLabel l1;
-        l1=new JLabel(message);
-        l1.setBounds(150,100, 200,30);
-        f.add(l1);
-        f.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        f.setLayout(null);
-        f.setVisible(true);
+    public Error(String message) {
+        f= new JFrame("Error message");
+        l=new JLabel(message);
+        l.setBounds(50,100, 400,30);
+        b=new JButton("Wyjście");
+        b.setBounds(50,350,150,50);
+        b.addActionListener(this);
+        f.add(l);f.add(b);
+        View();
     }
+
+    public void actionPerformed(ActionEvent e) {
+        f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+    } ;
 }
