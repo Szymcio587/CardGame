@@ -1,36 +1,51 @@
+package com.company;
+
 public class Card
 {
-    enum Color {
-        SPADES, CLUBS, DIAMONDS, HEARTS;
-        private static final Color[] colors = Color.values();
+    enum Color
+    {
+        Spades, Hearts, Diamonds, Clubs;
 
-        public static Color getColor(int i) {
+        private static final Color[] colors = Color.values();
+        public static Color getColor(int i)
+        {
             return Color.colors[i];
         }
     }
 
-    enum Value {
-        NINE, TEN, JACK, QUEEN, KING, AS;
-        private static final Value[] values = Value.values();
+    enum Value
+    {
+        Nine, Jack, Queen, King, Ten, Ase;
 
-        public static Value getValue(int i) {
-            return Value.values[i];
+        private static final Value[] value = Value.values();
+
+        public static Value getValue(int i)
+        {
+            return Value.value[i];
         }
     }
 
-    private Color color;
-    private Value value;
+    private final Color color;
+    private final Value value;
 
-    public Card(Color color, Value value) {
+    public Card(final Color color, final Value value)
+    {
         this.color = color;
         this.value = value;
     }
 
-    public Color getColor() {
+    public Color getColor()
+    {
         return color;
     }
 
-    public Value getValue() {
+    public Value getValue()
+    {
         return value;
+    }
+
+    public String toString()
+    {
+        return color + " " + value;
     }
 }

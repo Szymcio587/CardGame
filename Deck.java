@@ -1,9 +1,11 @@
+package com.company;
 import javax.swing.*;
+import java.security.PublicKey;
 import java.util.Random;
 import java.util.ArrayList;
 public class Deck
 {
-    private Card[] cards;
+    public Card[] cards;
     private int cardsindeck;
 
     public Deck()
