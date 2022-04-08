@@ -1,5 +1,3 @@
-package com.company;
-
 import com.company.PlayerCommunicator;
 import javax.swing.*;
 import java.awt.event.*;
