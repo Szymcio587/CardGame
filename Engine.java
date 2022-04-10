@@ -15,10 +15,9 @@ public class Engine {
 
     public Engine() {
         player = new PlayerClass("localhost", 6666);
-        while(!player.getID()) {
+        while(!player.HasStarted()) {
             System.out.print("");
         }
-        System.out.println(player.getID());
         Run();
     }
 

@@ -12,10 +12,12 @@ public class Card
             return Color.colors[i];
         }
     }
-
     enum Value
     {
         Nine, Jack, Queen, King, Ten, Ase;
+    enum Value {
+        NINE, TEN, JACK, QUEEN, KING, ACE;
+        private static final Value[] values = Value.values();
 
         private static final Value[] value = Value.values();
 

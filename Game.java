@@ -1,42 +1,62 @@
+import java.io.DataInputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Game {
-    private int currentPlayer;
-    private String[] playerIds;
+    /*Nie ma potrzeby robienia takiej struktury jak w tutorialu bo nie będziemy dobierali kart w trakcie gry ani tasowali
+    talii od nowa, wystarczy wylosować karty co każdą partię.*/
 
-    public Deck deck;
-    private ArrayList<ArrayList<Card>> stockpile;
+    private int currentPlayer;
+    private Deck deck;
     private ArrayList<Card> rest;
+    private static ArrayList<PlayerClass> players = new ArrayList<PlayerClass>();
 
     private Card.Color validColor;
     private Card.Value validValue;
-    public Arrays[] playerClass;
+    private Card.Color atut;
 
-    public Game(String[] pids) {
+    private class ReadFromServer implements Runnable {
+        private DataInputStream input;
+
+        public ReadFromServer(DataInputStream in) {
+            input = in;
+            System.out.println("Sending message to server...");
+        }
+
+        public void run() {
+
+        }
+    }
+
+
+    public Game(ArrayList<PlayerClass> players) {
+        for(int i=0; i<3; i++)
+        {
+            System.out.println(players.get(i).getName(i));
+        }
         deck = new Deck();
         deck.shuffle();
-        stockpile = new ArrayList<ArrayList<Card>>();
 
-        playerIds = pids;
         currentPlayer = 0;
 
-
-
-        for(int i=0; i<pids.length; i++)
+        for(int i=0; i<3; i++)
         {
             ArrayList<Card> hand = new ArrayList<Card>(Arrays.asList(deck.drawCards(7)));
-            playerClass.add(hand);
         }
+        ArrayList<Card> rest = new ArrayList<Card>(Arrays.asList(deck.drawCards(7)));
     }
 
     public void start(Game game)
     {
         Card card = deck.drawCard();
-
-
-
-
-
     }
+
+    public static void AddPlayer(PlayerClass player) {
+        players.add(player);
+    }
+
+    public static int GetPlayersNumber() {
+        return players.size();
+    }
+
 }

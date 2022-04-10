@@ -25,7 +25,7 @@ public class LogIn extends Window implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
         String name = tf.getText();
-        ar.get(0).setName(name);
+        ar.get(0).setName(name, 0);
         ar.get(0).Connect();
         f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
     } ;
