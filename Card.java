@@ -1,5 +1,3 @@
-package com.company;
-
 public class Card
 {
     enum Color
@@ -12,9 +10,6 @@ public class Card
             return Color.colors[i];
         }
     }
-    enum Value
-    {
-        Nine, Jack, Queen, King, Ten, Ase;
     enum Value {
         NINE, TEN, JACK, QUEEN, KING, ACE;
         private static final Value[] values = Value.values();
@@ -27,8 +22,8 @@ public class Card
         }
     }
 
-    private final Color color;
-    private final Value value;
+    private Color color;
+    private Value value;
 
     public Card(final Color color, final Value value)
     {

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-package com.company;
-
-=======
 import javax.xml.crypto.Data;
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.*;
@@ -14,9 +9,7 @@ public class PlayerCommunicator {
     private Socket soc;
     private DataInputStream input;
     private DataOutputStream output;
-<<<<<<< HEAD
     private boolean connection;
-=======
     private ReadFromServer rfs;
     private WriteToServer wts;
     private String[] names = new String[3];
@@ -92,7 +85,6 @@ public class PlayerCommunicator {
             }
         }
     }
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
 
     public void Connect() {
         try {
@@ -100,14 +92,10 @@ public class PlayerCommunicator {
             input = new DataInputStream(soc.getInputStream());
             output = new DataOutputStream(soc.getOutputStream());
             playerID = input.readInt();
-<<<<<<< HEAD
-
-=======
             if(playerID != 1) {
                 setName(getName(0), playerID-1);
                 setName("noname", 0);
             }
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
             if(playerID != 3) {
                 System.out.println("Zaczekaj na pozostałych graczy...");
             }
@@ -126,22 +114,17 @@ public class PlayerCommunicator {
     public PlayerCommunicator(String ip, int host) {
         this.ip = ip;
         this.host = host;
-<<<<<<< HEAD
         connection = false;
-=======
         playerID = 0;
         start_game = false;
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
 
         LogIn login = new LogIn(this);
 
-<<<<<<< HEAD
     }
 
     public void setName(String name) {
     }
 
-=======
     public String getName(int index) {
         return names[index];
     }
@@ -157,7 +140,6 @@ public class PlayerCommunicator {
     public boolean HasStarted() {
         return start_game;
     }
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
 
     public void setStart_game(boolean start_game) {
         this.start_game = start_game;

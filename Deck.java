@@ -1,4 +1,3 @@
-package com.company;
 import javax.swing.*;
 import java.security.PublicKey;
 import java.util.Random;

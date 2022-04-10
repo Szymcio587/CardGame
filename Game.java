@@ -2,7 +2,7 @@ import java.io.DataInputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Game {
+public class Game extends GameCommunicator{
     /*Nie ma potrzeby robienia takiej struktury jak w tutorialu bo nie będziemy dobierali kart w trakcie gry ani tasowali
     talii od nowa, wystarczy wylosować karty co każdą partię.*/
 
@@ -14,20 +14,8 @@ public class Game {
     private Card.Color validColor;
     private Card.Value validValue;
     private Card.Color atut;
-
-    private class ReadFromServer implements Runnable {
-        private DataInputStream input;
-
-        public ReadFromServer(DataInputStream in) {
-            input = in;
-            System.out.println("Sending message to server...");
-        }
-
-        public void run() {
-
-        }
-    }
-
+    
+    public Game
 
     public Game(ArrayList<PlayerClass> players) {
         for(int i=0; i<3; i++)

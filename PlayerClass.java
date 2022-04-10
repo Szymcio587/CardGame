@@ -5,36 +5,6 @@ import java.util.Arrays;
 
 public class PlayerClass extends PlayerCommunicator {
 
-    public int score;
-    public int score_in_single_round;
-    public ArrayList<Card> collected;
-    public ArrayList<Card> inhand;
-    public boolean is_bidding;
-    public int how_much_is_bidding;
-    public boolean is_on_turn;
-    public String name;
-    public PlayerClass(String ip, int host, int score, int score_in_single_round, boolean is_bidding, int how_much_is_bidding) {
-        super(ip, host);
-        this.score = score;
-        this.score_in_single_round = score_in_single_round;
-        this.is_bidding = is_bidding;
-        this.how_much_is_bidding = how_much_is_bidding;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public PlayerClass(String ip, int host) {
-        super(ip, host);
-    }
-
-
-=======
     private int points, bombs; //nie wiem jak inaczej przetłumaczyć bombki z tysiąca xD
     private int score_in_single_round; // dublowałeś zmienną do wyniku i licytacji
     private ArrayList<Card> collected;
@@ -110,8 +80,6 @@ public class PlayerClass extends PlayerCommunicator {
         return score_in_single_round;
     }
 
-<<<<<<< HEAD
-=======
     public void setScore_in_single_round(int score_in_single_round) {
         this.score_in_single_round = score_in_single_round;
     }
@@ -155,5 +123,4 @@ public class PlayerClass extends PlayerCommunicator {
     public void setIs_on_turn(boolean is_on_turn) {
         this.is_on_turn = is_on_turn;
     }
->>>>>>> 8b1583c (Przekazywanie podstawowych danych gracz-serwer, naprawa błędów)
 }
