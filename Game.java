@@ -15,7 +15,9 @@ public class Game extends GameCommunicator{
     private Card.Value validValue;
     private Card.Color atut;
     
-    public Game
+    public Game() {
+        super();
+    }
 
     public Game(ArrayList<PlayerClass> players) {
         for(int i=0; i<3; i++)
